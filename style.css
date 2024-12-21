@@ -154,8 +154,7 @@ header button{
 /* Section a propos */
 
 section{
-    padding-top: 220px;
-    padding: 0 130px;
+    padding: 220px 130px 0 130px;
     position: relative;
 }
 .line{
