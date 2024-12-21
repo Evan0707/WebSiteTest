@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --main-bg-color: #090B11;
+    --main-txt-color: #fff;
+    --second-txt-color: #B9B2BD;
+    --principal-color:#0D5EFF;
+    --box-color:#0B0B17;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--main-txt-color);
+    font-family: 'inter',sans-serif,Arial, Helvetica;
+    list-style: none;
+    text-decoration: none;
+    /* border: red 1px solid; */
+}
+body{
+    background-color: var(--main-bg-color);
+    height: 3000px;
+    margin:0;
+    position: relative;
+    overflow-x: hidden;
+}
+ul{
+    display: flex;
+    align-items: center;
+    color: var(--main-txt-color);
+    list-style: none;
+}
+li{
+    position: relative;
+    margin: 0 30px;
+    font-size: 0.9em;
+    font-weight: 400;
+    z-index: 30;
+}
+nav li:not(:last-child)::before{
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: var(--principal-color);
+    bottom: -3px;
+    left: 0;
+    transition: all 0.5s;
+    transition-timing-function:cubic-bezier(0.000, 0.220, 0.150, 1.000);;
+    z-index: -2;
+}
+nav li:not(:last-child):hover::before{
+    width: 100%;
+}
+nav ul{
+    animation: identifier 0.3s;
+}
+@keyframes identifier {
+    0%{transform: translateY(-100%);opacity: 0;}
+    100%{transform: translateY(0);}
+}
+
+
+
+nav li:last-child a{
+    background-color: var(--principal-color);
+    padding: 15px 22px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: rgba(13, 94, 255, 0.791) 0px 0px 10px 0px, rgba(13, 94, 255, 0) 0px 0px 0px 1px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 19px 3vw;
+    transition: all 0.3s;
+    z-index: 99999;
+}
+.nav.Scroll{
+    background-color: #06080cc4;
+    backdrop-filter: blur(20px);
+}
+h1{
+    display: flex;
+    flex-direction: column;
+    font-size: 7.5em;
+    line-height: 152px;
+    padding-top: 123px;
+    margin: 0 7vw;
+    font-weight: 400;
+}
+h1 span{
+    display: flex;
+    justify-content: left;
+    animation: slide-left 1.3s;
+}
+
+h1 span:nth-child(2){
+    display: flex;
+    justify-content: end;
+    margin-right: 22vw;
+    color: var(--principal-color);
+    animation: slide-right 1.3s;
+}
+@keyframes slide-right {
+    0%{transform: translatex(100vw);}
+    100%{transform: translatex(0);}
+}
+@keyframes slide-left {
+    0%{transform: translatex(-100vw);}
+    100%{transform: translatex(0);}
+}
+@keyframes slide-bottom {
+    0%{transform: translateY(70%);opacity: 0;}
+    50%{transform: translateY(70%); opacity: 0;}
+    100%{transform: translatex(0);opacity: 1;}
+}
+h1 span:last-child{
+    display: flex;
+    justify-content: center;
+    font-size: 90px;
+    animation: slide-bottom 2s;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./src/img/SFK-AGENCY-BG.png);
+    background-size: cover;
+    background-position: center;
+}
+#citation{
+    color: var(--second-txt-color);
+    text-align: center;
+    margin-top: 40px;
+}
+header button{
+    background-color: var(--principal-color);
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1em;
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+/* Section a propos */
+
+section{
+    padding-top: 220px;
+    padding: 0 130px;
+    position: relative;
+}
+.line{
+    width: 100px;
+    height: 4px;
+    background-color: var(--principal-color);
+    box-shadow: rgb(13, 94, 255) 0px 0px 20px 0px, rgba(13, 94, 255, 0) 0px 0px 0px 1px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all 0.3s;
+}
+.line.active{
+    transform: scaleX(1);
+}
+h2{
+    font-size: 48px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+.title{
+    display: flex;
+    align-items: center;
+}
+#a_propos_txt{
+    font-size: 20px;
+    line-height: 40px;
+    width: 48%;
+}
+#propsContent{
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+#propsContent img{
+    width: 48%;
+    height: 27%;
+    filter: grayscale();
+    border-radius: 20px;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--principal-color);
+    box-shadow: rgb(13, 94, 255) 0px 0px 20px 0px, rgba(13, 94, 255, 0) 0px 0px 0px 1px;
+    font-size: 1em;
+    padding: 12px 45px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.svg{
+    background-color: #090909;
+    border-radius: 20px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 0px 10px 0px, rgba(255, 255, 255, 0) 0px 0px 0px 1px;
+    position: absolute;
+    left: -30px;
+}
+.socialCard{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #0B0B17;
+    border: rgba(255, 255, 255, 0.2) solid 1px;
+    padding: 10px 46px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 34px 0;
+    width: 300px;
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 0.3s;
+}
+.socialCard.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+.socialCard p{
+    font-weight: 500;
+}
+
+.socialCard:last-child .svg{
+    background-color: #01DD3F;
+    box-shadow: rgba(52, 255, 20, 0.5) 0px 0px 10px 0px, rgba(255, 255, 255, 0) 0px 0px 0px 1px;
+
+}
+.socialCard:first-child .svg{
+    box-shadow: none;
+    background-color: transparent;
+    left: -45px;
+}
+.socialGride{
+    display: flex;
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+}
+#reseauxContent #txtSocial{
+    margin: 30px 0 50px 0;
+    font-weight: 300;
+}
+.input-struct{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#f_l_name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+#f_l_name .input-struct{
+    width: 49%;
+}
+input, textarea{
+    background-color: var(--box-color);
+    border: rgba(255, 255, 255, 0.2) solid 1px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    resize: none;
+}
+textarea{
+    height: 250px;
+    margin-bottom: 15px;
+}
+small{
+    color: var(--second-txt-color);
+    margin: 15px 0 10px 0;
+}
+#FormContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 9vw ;
+}
+
+#ContactForm a{
+    font-weight: 500;
+    color: var(--principal-color);
+}
+#ContactForm p{
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+.ServicesCard{
+    margin: 8px 0;
+    position: relative;
+    background: #010101;
+    border-radius: 20px;
+    border: rgb(71, 71, 71) 1px solid;
+    box-sizing: border-box;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    min-width: 350px;
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateY(50%);
+}
+
+.ServicesCard.active{
+    margin: 8px 0;
+    position: relative;
+    background: #010101;
+    border-radius: 20px;
+    border: rgb(71, 71, 71) 1px solid;
+    box-sizing: border-box;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    min-width: 200px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ServicesCard li{
+    color: var(--second-txt-color);
+    list-style:disc;
+    line-height: 40px;
+    font-size: 1em;
+}
+.ServicesCard ul{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.ServicesCard svg, .ServicesCard embed{
+    position: absolute;
+    right: 40px;
+}
+.ServicesCard .TitleCardServices{
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 1.4em;
+}
+#servicesContent{
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+}
+.Foorter_wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+footer{position: relative;
+    margin-top: 160px;
+    background-color: black;
+    padding-top: 35px;
+}
+footer p{
+    text-align: center;
+    font-weight: 300;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+footer #float{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.menuIcon{
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    display: none;
+}
+.mobNav{
+    display: none;
+}
+.mobNav.active{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #010101bd;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999;
+    padding: 15vh 0;
+    box-sizing: border-box;
+}
+
+.menuIcon{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    background-image: url(./src/menu.svg);
+    background-size: cover;
+}
+.menuIcon.open{
+    background-image: url(./src/close.svg);
+    background-size: cover;
+}
+
+.mobNav.active li{
+    margin: 30px 0;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1200px) {
+    .Foorter_wrap{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    footer #float{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        left: auto;
+        transform: none;
+        margin: 50px 0;
+    }
+}
+
+@media only screen and (max-width: 1170px) {
+    .socialGride{
+        flex-direction: column;
+        align-items: center;
+    }
+    #propsContent{
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    #servicesContent{
+        justify-content: center;
+    }
+    #propsContent{
+        flex-direction: column;
+        justify-content: center;
+    }
+    footer li{
+        margin: 15px 0;
+    }
+    .ServicesCard.active{
+        margin: 8px 0;
+        position: relative;
+        background: #010101;
+        border-radius: 20px;
+        border: rgb(71, 71, 71) 1px solid;
+        box-sizing: border-box;
+        width: 49%;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        min-width: 100%;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    #propsContent img{
+        margin-top: 30px;
+        width: 90%;
+        height: 50%;
+    }
+    #a_propos_txt{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    #Intro ul{
+        display: none;
+    }
+
+    .menuIcon{
+        display: block;
+    }
+    nav{
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    section{
+        padding: 220px 40px 40px;
+        max-width: 100vw;
+    }
+    h2{
+        font-size: 24px;
+    }
+    #FormContent{
+        margin: 30px 1vw ;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    h1{
+        display: flex;
+        flex-direction: column;
+        font-size: 64px;
+        width: 100%;
+        margin: 0 5px;
+    }
+    h1 span:nth-child(2){
+        display: flex ;
+        justify-content: center;
+        margin: 0;
+    }
+    h1 span:last-child{
+        display: flex;
+        justify-content: end;
+        font-size: 40px;
+        width: 30px;
+        text-align: end;
+        line-height: 45px;
+        margin-left: calc(100% - 40px);
+    }
+    .socialCard{
+        width: 250px;
+    }
+    footer ul{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header p{
+        margin: 0 10px;
+    }
+
+    .line{
+        width: 40px;
+    }
+    h2{
+        margin-left: 20px;
+    }
+}
+@media only screen and (max-width: 390px) {
+    section{
+        padding: 0 10px;
+    }
+    .socialCard{
+        width: 190px;
+    }
+    .socialCard p{
+        font-size: 14px;
+    }
+    .ServicesCard.active{
+        width: 80%;
+    }
+    .svg{left: -18px;}
+    #a_propos_txt{
+        font-size: 1em;
+    }
+    header{
+        padding: 0 5px;
+    }
+}
